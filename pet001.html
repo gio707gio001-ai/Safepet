@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ka" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>SafePet ID</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 
+                            bg: '#000000',
+                            surface: '#121217',
+                            accent: '#6366f1',
+                            secondary: '#8b5cf6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background: #000000;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            overscroll-behavior: none;
+            overflow-x: hidden;
+        }
+
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .action-button {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .action-button:active {
+            transform: scale(0.96);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 40%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.07) 0%, transparent 70%);
+            filter: blur(60px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="max-w-md mx-auto min-h-screen flex flex-col px-6">
+    
+    <div class="glow top-[-50px] left-[-50px]"></div>
+    <div class="glow bottom-[5%] right-[-50px]" style="background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);"></div>
+
+    <header class="sticky top-4 z-50 pt-4">
+        <div class="glass-card rounded-[2rem] px-5 py-3.5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-xl bg-brand-accent flex items-center justify-center">
+                    <i data-lucide="paw-print" class="text-white w-4 h-4"></i>
+                </div>
+                <span class="text-m font-extrabold tracking-widest uppercase opacity-80">SafePet</span>
+                 
+            </div>
+          
+        </div>
+    </header>
+
+    <main class="flex-1 mt-8 space-y-5 pb-10">
+        
+        <section>
+            <div class="glass-card rounded-[3rem] p-10 text-center border-white/5">
+                <div class="relative inline-block mb-6">
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=300&h=300" 
+                         class="w-40 h-40 rounded-[2.5rem] object-cover relative border border-white/10" 
+                         alt="Pet Photo">
+                </div>
+                
+                <h2 class="text-4xl font-extrabold tracking-tighter gradient-text">ბადი</h2>
+                <p class="text-white/40 text-[11px] font-bold uppercase tracking-[0.3em] mt-2">ფრანგული ბულდოგი</p>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-2 gap-4">
+            <a href="tel:+995597911849" class="action-button rounded-[2rem] py-6 flex flex-col items-center gap-3">
+                <i data-lucide="phone" class="w-5 h-5 text-brand-accent"></i>
+                <span class="text-[10px] font-bold uppercase tracking-widest opacity-60">დარეკვა</span>
+            </a>
+            <a href="https://wa.me/995597911849" class="action-button rounded-[2rem] py-6 flex flex-col items-center gap-3">
+                <i data-lucide="message-circle" class="w-5 h-5 text-emerald-400"></i>
+                <span class="text-[10px] font-bold uppercase tracking-widest opacity-60">WhatsApp</span>
+            </a>
+        </section>
+
+        <section class="glass-card rounded-[2.5rem] p-6 flex items-center gap-5">
+            <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <i data-lucide="user" class="w-5 h-5 text-white/40"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[9px] font-bold text-brand-accent uppercase tracking-widest mb-0.5">მფლობელი</span>
+                <h3 class="text-sm font-bold text-white/90">გიორგი ახვლედიანი</h3>
+                <p class="text-[11px] text-white/40">თბილისი, ვაკე-საბურთალო</p>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-[2.5rem] p-7">
+            <div class="flex items-center gap-3 mb-3">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-brand-secondary"></i>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-brand-secondary">ყურადღება</span>
+            </div>
+            <p class="text-white/50 text-sm leading-relaxed">
+                ბადი არის ძალიან მეგობრული. თუ იპოვეთ, გთხოვთ ნუ დატოვებთ ქუჩაში, აუცილებლად დაგვიკავშირდით ზემოთ მითითებულ ნომერზე.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="py-6 text-center">
+        <span class="text-[8px] font-bold uppercase tracking-[0.5em] text-white/20">Secured by SafePet</span>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
